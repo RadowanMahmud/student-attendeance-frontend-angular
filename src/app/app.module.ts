@@ -16,9 +16,6 @@ import { TableListComponent } from './table-list/table-list.component';
 import { TypographyComponent } from './typography/typography.component';
 import { IconsComponent } from './icons/icons.component';
 import { NotificationsComponent } from './notifications/notifications.component';
-import {
-  AgmCoreModule
-} from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { LoginLayoutComponent } from './login-layout/login-layout.component';
 
@@ -31,9 +28,6 @@ import { LoginLayoutComponent } from './login-layout/login-layout.component';
     ComponentsModule,
     RouterModule,
     AppRoutingModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
-    })
   ],
   declarations: [
       AppComponent,

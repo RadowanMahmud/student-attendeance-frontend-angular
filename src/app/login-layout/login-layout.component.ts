@@ -23,7 +23,7 @@ export class LoginLayoutComponent implements OnInit {
             (response: any) => {
                 if (response) {
                     console.log(response.data)
-                    localStorage.setItem('isLoggedIn', "admin");
+                    localStorage.setItem('isLoggedIn', JSON.stringify(response));
                     this.router.navigate(["dashboard"]);
                     this.service.adminSignInformModel.reset();
                 }
