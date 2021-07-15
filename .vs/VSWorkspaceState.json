@@ -3,8 +3,13 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\table-list"
+    "\\src\\app\\layouts",
+    "\\src\\app\\layouts\\admin-layout",
+    "\\src\\app\\login-layout",
+    "\\src\\app\\services",
+    "\\src\\assets",
+    "\\src\\assets\\img"
   ],
-  "SelectedNode": "\\src\\app\\table-list\\table-list.component.html",
+  "SelectedNode": "\\src\\app\\login-layout\\login-layout.component.ts",
   "PreviewInSolutionExplorer": false
 }
