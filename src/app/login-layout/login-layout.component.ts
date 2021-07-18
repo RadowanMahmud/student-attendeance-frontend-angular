@@ -30,6 +30,9 @@ export class LoginLayoutComponent implements OnInit {
                 else {
                     console.log("not succeed");
                 }
+            },
+            error => {                             
+                alert('Can not login. Please try again');
             }
         );
 

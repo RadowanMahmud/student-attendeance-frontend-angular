@@ -18,6 +18,7 @@ import { IconsComponent } from './icons/icons.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { LoginLayoutComponent } from './login-layout/login-layout.component';
+import { StudentLayoutComponent } from './layouts/student-layout/student-layout.component';
 
 @NgModule({
   imports: [
@@ -33,6 +34,7 @@ import { LoginLayoutComponent } from './login-layout/login-layout.component';
       AppComponent,
       AdminLayoutComponent,
       LoginLayoutComponent,
+      StudentLayoutComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

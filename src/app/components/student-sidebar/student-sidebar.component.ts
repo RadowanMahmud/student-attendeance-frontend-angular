@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+
 declare const $: any;
 declare interface RouteInfo {
     path: string;
@@ -15,15 +16,13 @@ export const ROUTES: RouteInfo[] = [
     { path: '/typography', title: 'Typography',  icon:'library_books', class: '' },
     { path: '/icons', title: 'Icons',  icon:'bubble_chart', class: '' },
     { path: '/notifications', title: 'Notifications', icon: 'notifications', class: '' },
-    { path: '/student/list', title: 'Student List', icon: 'content_paste', class: '' },
 ];
-
 @Component({
-  selector: 'app-sidebar',
-  templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.css']
+  selector: 'app-student-sidebar',
+  templateUrl: './student-sidebar.component.html',
+  styleUrls: ['./student-sidebar.component.css']
 })
-export class SidebarComponent implements OnInit {
+export class StudentSidebarComponent implements OnInit {
   menuItems: any[];
 
   constructor(private router: Router) { }
@@ -35,5 +34,6 @@ export class SidebarComponent implements OnInit {
   logout() {
     localStorage.removeItem('isLoggedIn');
     this.router.navigateByUrl('login');
-   }
+  }
+
 }

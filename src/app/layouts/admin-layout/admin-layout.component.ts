@@ -14,8 +14,7 @@ import * as $ from "jquery";
 })
 export class AdminLayoutComponent implements OnInit {
   private _router: Subscription;
-  private lastPoppedUrl: string;
-  private yScrollStack: number[] = [];
+
 
     constructor(public location: Location, private router: Router) {
        
