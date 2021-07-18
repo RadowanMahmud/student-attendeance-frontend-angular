@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { FormBuilder, Validators } from '@angular/forms';
+import { catchError } from 'rxjs/operators';
+import { throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +21,16 @@ export class AuthService {
         }
 
         return this.http.post<any>(this.authUrl , body);
+    }
+
+    public testing() {
+        var user = JSON.parse( localStorage.getItem('isLoggedIn'));
+       
+        var header = {
+            headers: new HttpHeaders()
+              .set('Authorization',  `Bearer ${user.token}`)
+          }
+        return this.http.get<any>("http://localhost:52684/api/admins" , header)
     }
 
     adminSignInformModel = this.formbuilder.group({

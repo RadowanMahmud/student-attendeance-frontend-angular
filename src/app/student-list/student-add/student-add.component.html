@@ -1,0 +1,63 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Add New Student</h4>
+                        <p class="card-category">New students can be added to the system from here</p>
+                    </div>
+                    <div class="card-body">
+                        <form [formGroup]="service.studentAddForm" #form="ngForm" autocomplete="off" (submit)="saveStudent()">
+                            <div class="row">
+                                <div class="col-md-8">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Enter Student Name" formControlName="Name" type="text">
+                                  </mat-form-field>
+                                </div>
+                                <div class="col-md-4">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Enter Student Roll" formControlName="Roll" type="text">
+                                  </mat-form-field>
+                                </div>
+                            </div>
+                        
+                            <div class="row">
+                                <div class="col-md-6">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Phone" formControlName="Phone" type="text">
+                                  </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                  <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Session" formControlName="Session" type="text">
+                                  </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                  <label>Auth Info</label>
+                                  <div class="col-md-8">
+                                    <mat-form-field class="example-full-width">
+                                      <input matInput placeholder="Email" formControlName="Email" type="text">
+                                    </mat-form-field>
+                                  </div>
+                                  <div class="col-md-8">
+                                    <mat-form-field class="example-full-width">
+                                      <input matInput placeholder="Password" formControlName="Password" type="text">
+                                    </mat-form-field>
+                                  </div>
+                                </div>
+                            </div>
+                            <button mat-raised-button type="submit" matTooltip="Save Student Info" [matTooltipPosition]="'above'" class="btn btn-danger pull-right">
+                                Save Student
+                            </button>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  
