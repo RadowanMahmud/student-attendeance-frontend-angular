@@ -20,6 +20,7 @@ export class StudentDashboardComponent implements OnInit {
     this.service.fetchAttendence().subscribe(
       (response: any) => {
           if (response) {
+              this.responses = []
               this.responses = response;
               console.log(this.responses);
           }
@@ -30,7 +31,23 @@ export class StudentDashboardComponent implements OnInit {
       error => {                             
           alert('Please Reload');
       }
-  );
+    );
+  }
+  saveAttendence(id): void{
+    this.service.saveAttendenceRecord(id).subscribe(
+      (response: any) => {
+          if (response) {
+             alert("Attendence Saved");
+             this.getCurrentAttendence();
+          }
+          else {
+              console.log("not succeed");
+          }
+      },
+      error => {                             
+          alert('Please Reload');
+      }
+    );
   }
 
 }

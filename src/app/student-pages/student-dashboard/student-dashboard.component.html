@@ -71,7 +71,7 @@
                         <div class="row">
                             <div class="col-9"><p><small>Please Mark Your Self Present To Ensure Your Attendence</small></p></div>
                             <div class="mlleft col-auto">
-                                <button mat-raised-button matTooltip="Give Attendence" [matTooltipPosition]="'above'" class="btn btn-info pull-right">
+                                <button (click)="saveAttendence(response.data.id)" mat-raised-button matTooltip="Give Attendence" [matTooltipPosition]="'above'" class="btn btn-info pull-right">
                                     Mark me as Present
                                 </button>
                             </div>
