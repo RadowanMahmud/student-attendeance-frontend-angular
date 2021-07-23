@@ -42,22 +42,19 @@
                                 <tbody>
                                     <tr *ngFor="let response of responses">
                                         <td>
-                                            {{ response.id }}
+                                            {{ response.data.id }}
                                         </td>
                                         <td>
-                                            {{ response.name }}
+                                            {{ response.data.title }}
                                         </td>
                                         <td>
-                                            {{ response.roll }}
+                                            {{ response.admin.name }}
                                         </td>
                                         <td>
-                                            {{ response.phone }}
+                                            {{ response.data.startTime | date :'medium' }}
                                         </td>
                                         <td>
-                                            {{ response.session }}
-                                        </td>
-                                        <td>
-                                            {{ response.email }}
+                                            {{ response.data.endTime | date :'medium' }}
                                         </td>
                                         <td>
                                             <button mat-raised-button type="button" matTooltip="Remove Student" [matTooltipPosition]="'above'" class="btn btn-danger btn-link btn-just-icon">
