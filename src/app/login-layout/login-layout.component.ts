@@ -13,18 +13,26 @@ export class LoginLayoutComponent implements OnInit {
 
     ngOnInit(): void {
         if (localStorage.getItem('isLoggedIn')) {
-            this.router.navigateByUrl('dashboard');
+            var user = JSON.parse( localStorage.getItem('isLoggedIn'));
+            if(user.data.roles == 'admin'){
+                this.router.navigateByUrl('dashboard');
+            }else {
+                this.router.navigateByUrl('student');
+            }
         }
     }
 
     signIn(): void{
-
         this.service.adminSignInOperation().subscribe(
             (response: any) => {
                 if (response) {
                     console.log(response.data)
                     localStorage.setItem('isLoggedIn', JSON.stringify(response));
-                    this.router.navigate(["dashboard"]);
+                    if(response.data.roles == 'admin'){
+                        this.router.navigateByUrl('dashboard');
+                    }else {
+                        this.router.navigateByUrl('student');
+                    }
                     this.service.adminSignInformModel.reset();
                 }
                 else {

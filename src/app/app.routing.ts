@@ -28,6 +28,11 @@ const routes: Routes =[
   },
   {
     path: 'student',
+    redirectTo: 'student/stu/dashboard',
+    pathMatch: 'full',
+  },
+  {
+    path: 'student',
     component: StudentLayoutComponent,
     children: [{
       path: '',

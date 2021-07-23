@@ -1,12 +1,7 @@
 import { Routes } from '@angular/router';
 
-// import { DashboardComponent } from '../../dashboard/dashboard.component';
-// import { UserProfileComponent } from '../../user-profile/user-profile.component';
-// import { TableListComponent } from '../../table-list/table-list.component';
-// import { TypographyComponent } from '../../typography/typography.component';
-// import { IconsComponent } from '../../icons/icons.component';
-// import { NotificationsComponent } from '../../notifications/notifications.component';
-
+import { StudentDashboardComponent } from 'app/student-pages/student-dashboard/student-dashboard.component';
+import { StudentProfileComponent } from 'app/student-pages/student-profile/student-profile.component';
 // import { YourGuardGuard } from '../../your-guard.guard';
 
 export const StudentLayoutRoutes: Routes = [
@@ -56,6 +51,6 @@ export const StudentLayoutRoutes: Routes = [
     // { path: 'user-profile', component: UserProfileComponent, },
     // { path: 'table-list', component: TableListComponent },
     // { path: 'typography', component: TypographyComponent },
-    // { path: 'icons', component: IconsComponent},
-    // { path: 'notifications',  component: NotificationsComponent },
+    { path: 'stu/dashboard', component: StudentDashboardComponent},
+    { path: 'stu/profile',  component: StudentProfileComponent },
 ];

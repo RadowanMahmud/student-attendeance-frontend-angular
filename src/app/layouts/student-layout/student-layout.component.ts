@@ -13,6 +13,11 @@ export class StudentLayoutComponent implements OnInit {
   ngOnInit(): void {
     if (!localStorage.getItem('isLoggedIn')) {
       this.router.navigateByUrl('login');
+    }else{
+      var user = JSON.parse( localStorage.getItem('isLoggedIn'));
+      if(user.data.roles == 'admin'){
+          this.router.navigateByUrl('dashboard');
+      }
     }
   }
 
