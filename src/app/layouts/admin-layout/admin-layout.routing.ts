@@ -9,6 +9,8 @@ import { NotificationsComponent } from '../../notifications/notifications.compon
 import { StudentListComponent } from 'app/student-list/student-list.component';
 import { YourGuardGuard } from '../../your-guard.guard';
 import { StudentAddComponent } from 'app/student-list/student-add/student-add.component';
+import { AttedenceComponent } from 'app/attedence/attedence.component';
+import { AddAttedenceComponent } from 'app/attedence/add-attedence/add-attedence.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -61,5 +63,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'notifications',  component: NotificationsComponent },
     { path: 'student/list', component: StudentListComponent},
     { path: 'add/student', component: StudentAddComponent},
+    { path: 'attendence', component: AttedenceComponent},
+    { path: 'add/attendence', component: AddAttedenceComponent},
 
 ];
