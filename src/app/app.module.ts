@@ -18,6 +18,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { LoginLayoutComponent } from './login-layout/login-layout.component';
 import { StudentLayoutComponent } from './layouts/student-layout/student-layout.component';
 
+
 @NgModule({
   imports: [
     BrowserAnimationsModule,
