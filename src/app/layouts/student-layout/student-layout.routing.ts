@@ -51,6 +51,6 @@ export const StudentLayoutRoutes: Routes = [
     // { path: 'user-profile', component: UserProfileComponent, },
     // { path: 'table-list', component: TableListComponent },
     // { path: 'typography', component: TypographyComponent },
-    { path: 'stu/dashboard', component: StudentDashboardComponent},
-    { path: 'stu/profile',  component: StudentProfileComponent },
+    { path: 'dashboard', component: StudentDashboardComponent},
+    { path: 'profile',  component: StudentProfileComponent },
 ];
