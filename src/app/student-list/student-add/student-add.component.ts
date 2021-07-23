@@ -23,7 +23,7 @@ export class StudentAddComponent implements OnInit {
       error => {                             
           alert('Something went wrong');
       }
-  );
+    );
   }
 
 }

@@ -6,11 +6,11 @@ import { AdminLayoutRoutes } from './admin-layout.routing';
 import { DashboardComponent } from '../../dashboard/dashboard.component';
 import { UserProfileComponent } from '../../user-profile/user-profile.component';
 import { TableListComponent } from '../../table-list/table-list.component';
-import { TypographyComponent } from '../../typography/typography.component';
-import { IconsComponent } from '../../icons/icons.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { StudentListComponent } from 'app/student-list/student-list.component';
 import { StudentAddComponent } from 'app/student-list/student-add/student-add.component';
+import { AttedenceComponent } from 'app/attedence/attedence.component';
+import { AddAttedenceComponent } from 'app/attedence/add-attedence/add-attedence.component';
 
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
@@ -36,11 +36,11 @@ import {MatSelectModule} from '@angular/material/select';
     DashboardComponent,
     UserProfileComponent,
     TableListComponent,
-    TypographyComponent,
-    IconsComponent,
     NotificationsComponent,
     StudentListComponent,
-    StudentAddComponent
+    StudentAddComponent,
+    AttedenceComponent,
+    AddAttedenceComponent,
   ]
 })
 

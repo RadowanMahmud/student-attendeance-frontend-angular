@@ -30,6 +30,7 @@ export class AuthService {
             headers: new HttpHeaders()
               .set('Authorization',  `Bearer ${user.token}`)
           }
+          
         return this.http.get<any>("http://localhost:52684/api/admins" , header)
     }
 

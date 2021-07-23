@@ -3,12 +3,12 @@ import { Routes } from '@angular/router';
 import { DashboardComponent } from '../../dashboard/dashboard.component';
 import { UserProfileComponent } from '../../user-profile/user-profile.component';
 import { TableListComponent } from '../../table-list/table-list.component';
-import { TypographyComponent } from '../../typography/typography.component';
-import { IconsComponent } from '../../icons/icons.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { StudentListComponent } from 'app/student-list/student-list.component';
 import { YourGuardGuard } from '../../your-guard.guard';
 import { StudentAddComponent } from 'app/student-list/student-add/student-add.component';
+import { AttedenceComponent } from 'app/attedence/attedence.component';
+import { AddAttedenceComponent } from 'app/attedence/add-attedence/add-attedence.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -56,10 +56,10 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard', component: DashboardComponent },
     { path: 'user-profile', component: UserProfileComponent, },
     { path: 'table-list', component: TableListComponent },
-    { path: 'typography', component: TypographyComponent },
-    { path: 'icons', component: IconsComponent, canActivate: [YourGuardGuard]},
     { path: 'notifications',  component: NotificationsComponent },
     { path: 'student/list', component: StudentListComponent},
     { path: 'add/student', component: StudentAddComponent},
+    { path: 'attendence', component: AttedenceComponent},
+    { path: 'add/attendence', component: AddAttedenceComponent},
 
 ];
