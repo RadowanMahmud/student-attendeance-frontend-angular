@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AttendenceForStudentService } from 'app/services/student/attendence-for-student.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-student-dashboard',
@@ -9,7 +10,7 @@ import { AttendenceForStudentService } from 'app/services/student/attendence-for
 export class StudentDashboardComponent implements OnInit {
   responses: object=[]
 
-  constructor(public service: AttendenceForStudentService) { }
+  constructor(public service: AttendenceForStudentService,private router: Router) { }
 
   ngOnInit(): void {
     //console.log('hi')
@@ -48,6 +49,10 @@ export class StudentDashboardComponent implements OnInit {
           alert('Please Reload');
       }
     );
+  }
+
+  navigate(path): void{
+    this.router.navigateByUrl(path);
   }
 
 }

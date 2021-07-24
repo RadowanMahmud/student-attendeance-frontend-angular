@@ -13,6 +13,7 @@ import {MatSelectModule} from '@angular/material/select';
 
 import { StudentDashboardComponent } from 'app/student-pages/student-dashboard/student-dashboard.component';
 import { StudentProfileComponent } from 'app/student-pages/student-profile/student-profile.component';
+import { DailyReportComponent } from 'app/student-pages/reports/daily-report/daily-report.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -28,7 +29,8 @@ import { StudentProfileComponent } from 'app/student-pages/student-profile/stude
   ],
   declarations: [
     StudentDashboardComponent,
-    StudentProfileComponent
+    StudentProfileComponent,
+    DailyReportComponent
   ]
 })
 

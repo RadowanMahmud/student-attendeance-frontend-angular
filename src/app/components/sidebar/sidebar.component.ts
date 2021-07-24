@@ -31,10 +31,6 @@ export class SidebarComponent implements OnInit {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
   }
 
-  chkvalidity(path : string): boolean{
-    console.log('Calling');
-    return false;
-  }
 
   logout() {
     localStorage.removeItem('isLoggedIn');

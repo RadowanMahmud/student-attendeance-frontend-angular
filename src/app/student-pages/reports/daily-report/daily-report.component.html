@@ -1,0 +1,63 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-success">
+                        <div class="row">
+                            <div class="col-md-10">
+                                <h4 class="card-title ">Daily Attendence Report</h4>
+                                <p class="card-category">List Of Attendences of Today For {{ user_name }} Roll: {{ user_roll}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th>
+                                        Title
+                                    </th>
+                                    <th>
+                                        Author
+                                    </th>
+                                    <th>
+                                        Given Time
+                                    </th>
+                                    <th>
+                                        Start Time
+                                    </th>
+                                    <th>
+                                        End Time
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let response of responses">
+                                        <td>
+                                            {{ response.attendence.title }}
+                                        </td>
+                                        <td>
+                                            {{ response.admin.name }}
+                                        </td>
+                                        <td>
+                                            {{ response.record.givenTime | date :'medium' }}
+                                        </td>
+                                        <td>
+                                            {{ response.attendence.startTime | date :'medium' }}
+                                        </td>
+                                        <td>
+                                            {{ response.attendence.endTime | date :'medium' }}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+
+
