@@ -1,1 +1,84 @@
-<p>student-profile works!</p>
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-success">
+                        <div class="row">
+                            <div class="col-10">
+                                <h4 class="card-title">User Profile</h4>
+                                <p class="card-category">{{ user_name}}'s profile</p>
+                            </div>
+                            <div class="col-auto">
+                                <button (click)="navigate('student/profile-edit')" mat-raised-button type="button" matTooltip="Edit your info" [matTooltipPosition]="'above'" class="btn btn-danger btn-md">
+                                    Edit Info
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <div class="row rowpm">
+                                <div class="col-md-2">
+                                        <label><b>User Name</b></label>
+                                </div>
+                                <div class="col-md-1">
+                                    <label><b> :</b></label>
+                                </div>
+                                <div class="col-md-auto">
+                                        <input [(ngModel)]="user_name" name="user_name" matInput disabled>
+                                </div>
+                            </div>
+                            <div class="row rowpm">
+                                <div class="col-md-2">
+                                    <label><b>User Roll</b></label>
+                                </div>
+                                <div class="col-md-1">
+                                    <label><b> :</b></label>
+                                </div>
+                                <div class="col-md-auto">
+                                        <input [(ngModel)]="user_roll" name="user_roll" matInput disabled>
+                                </div>
+                            </div>
+                            <div class="row rowpm">
+                                <div class="col-md-2">
+                                    <label><b>User Phone</b></label>
+                                </div>
+                                <div class="col-md-1">
+                                    <label><b> :</b></label>
+                                </div>
+                                <div class="col-md-auto">
+                                        <input [(ngModel)]="user_phone" name="user_phone" matInput disabled>
+                                </div>
+                            </div>
+                            <div class="row rowpm">
+                                <div class="col-md-2">
+                                    <label><b>User Email</b></label>
+                                </div>
+                                <div class="col-md-1">
+                                    <label><b> :</b></label>
+                                </div>
+                                <div class="col-md-auto">
+                                        <input [(ngModel)]="user_email" name="user_email" matInput disabled>
+                                </div>
+                            </div>
+                            <div class="row rowpm">
+                                <div class="col-md-2">
+                                    <label><b>User Session</b></label>
+                                </div>
+                                <div class="col-md-1">
+                                    <label><b> :</b></label>
+                                </div>
+                                <div class="col-md-auto">
+                                    <input [(ngModel)]="user_session" name="user_session" matInput disabled>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  

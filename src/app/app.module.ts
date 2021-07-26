@@ -17,6 +17,8 @@ import { NotificationsComponent } from './notifications/notifications.component'
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { LoginLayoutComponent } from './login-layout/login-layout.component';
 import { StudentLayoutComponent } from './layouts/student-layout/student-layout.component';
+import { MonthlyReportComponent } from './student-pages/reports/monthly-report/monthly-report.component';
+import { StudentProfileEditComponent } from './student-pages/student-profile-edit/student-profile-edit.component';
 
 
 @NgModule({
@@ -34,6 +36,8 @@ import { StudentLayoutComponent } from './layouts/student-layout/student-layout.
       AdminLayoutComponent,
       LoginLayoutComponent,
       StudentLayoutComponent,
+      MonthlyReportComponent,
+      StudentProfileEditComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

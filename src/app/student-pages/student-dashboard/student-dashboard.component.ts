@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./student-dashboard.component.css']
 })
 export class StudentDashboardComponent implements OnInit {
-  responses: object=[]
+  responses: object=[];
+  selectedMonth: string='';
 
   constructor(public service: AttendenceForStudentService,private router: Router) { }
 
@@ -49,6 +50,10 @@ export class StudentDashboardComponent implements OnInit {
           alert('Please Reload');
       }
     );
+  }
+
+  getMonthlyReport(): void{
+    console.log('hello' + this.selectedMonth);
   }
 
   navigate(path): void{

@@ -18,4 +18,15 @@ export class ReportService {
       
     return this.http.get<any>(`http://localhost:52684/api/records/reports/daily/${user.data.id}` , header)
   }
+
+  public fetchMonthlyAttendenceReport(date: string) {
+    var user = JSON.parse( localStorage.getItem('isLoggedIn'));
+   
+    var header = {
+        headers: new HttpHeaders()
+          .set('Authorization',  `Bearer ${user.token}`)
+    }
+      
+    return this.http.get<any>(`http://localhost:52684/api/records/reports/monthly/${date}/${user.data.id}` , header)
+  }
 }
