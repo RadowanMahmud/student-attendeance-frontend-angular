@@ -1,1 +1,118 @@
-<p>student-profile-edit works!</p>
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row cen">
+            <div class="col-md-12">
+                <div class="card card-profile">
+                    <div class="card-avatar">
+                        <a href="javascript:void(0)">
+                            <img class="img" src="./assets/img/angular.png" />
+                        </a>
+                    </div>
+                    <div class="card-header card-header-success">
+                        <h4 class="card-title">Edit Student Profile</h4>
+                        <p class="card-category">Edit Your informations and password</p>
+                    </div>
+                    <div class="card-body">
+                        <div>
+                            <div class="row rowpm">
+                                <div class="col-md-2">
+                                        <label><b>User Name</b></label>
+                                </div>
+                                <div class="col-md-1">
+                                    <label><b> :</b></label>
+                                </div>
+                                <div class="col-md-auto">
+                                        <input [(ngModel)]="user_name" class="form-control" name="user_name" matInput >
+                                </div>
+                            </div>
+                            <div class="row rowpm">
+                                <div class="col-md-2">
+                                    <label><b>User Roll</b></label>
+                                </div>
+                                <div class="col-md-1">
+                                    <label><b> :</b></label>
+                                </div>
+                                <div class="col-md-auto">
+                                        <input class="form-control" [(ngModel)]="user_roll" name="user_roll" matInput >
+                                </div>
+                            </div>
+                            <div class="row rowpm">
+                                <div class="col-md-2">
+                                    <label><b>User Phone</b></label>
+                                </div>
+                                <div class="col-md-1">
+                                    <label><b> :</b></label>
+                                </div>
+                                <div class="col-md-auto">
+                                        <input class="form-control" [(ngModel)]="user_phone" name="user_phone" matInput >
+                                </div>
+                            </div>
+                            <div class="row rowpm">
+                                <div class="col-md-2">
+                                    <label><b>User Email</b></label>
+                                </div>
+                                <div class="col-md-1">
+                                    <label><b> :</b></label>
+                                </div>
+                                <div class="col-md-auto">
+                                        <input class="form-control" [(ngModel)]="user_email" name="user_email" matInput >
+                                </div>
+                            </div>
+                            <div class="row rowpm">
+                                <div class="col-md-2">
+                                    <label><b>User Session</b></label>
+                                </div>
+                                <div class="col-md-1">
+                                    <label><b> :</b></label>
+                                </div>
+                                <div class="col-md-auto">
+                                    <input class="form-control" [(ngModel)]="user_session" name="user_session" matInput >
+                                </div>
+                            </div>
+                            <div class="row rowpm">
+                                <div class="col-md-2">
+                                    <label><b>Password </b></label>
+                                </div>
+                                <div class="col-md-1">
+                                    <label><b> :</b></label>
+                                </div>
+                                <div class="col-md-auto">
+                                    <input class="form-control" type="password" [(ngModel)]="user_password" name="user_password" matInput disabled >
+                                </div>
+                            </div>
+                            <div class="row rowpm info">
+                                For Changing Password Please Fill the Info's Below
+                            </div>
+                            <div class="row rowpm">
+                                <div class="col-md-2">
+                                    <label><b>Confirm Password</b></label>
+                                </div>
+                                <div class="col-md-1">
+                                    <label><b> :</b></label>
+                                </div>
+                                <div class="col-md-auto">
+                                    <input class="form-control" type="password" [(ngModel)]="user_confirm_password" name="user_confirm_password" matInput >
+                                </div>
+                            </div>
+                            <div class="row rowpm">
+                                <div class="col-md-2">
+                                    <label><b>Password </b></label>
+                                </div>
+                                <div class="col-md-1">
+                                    <label><b> :</b></label>
+                                </div>
+                                <div class="col-md-auto">
+                                    <input class="form-control" type="password" [(ngModel)]="user_new_password" name="user_new_password" matInput >
+                                </div>
+                            </div>
+                            <button  mat-raised-button type="button" matTooltip="Save info" [matTooltipPosition]="'above'" class="btn btn-danger btn-md">
+                                Save Edited Info
+                            </button>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
