@@ -33,7 +33,7 @@
                                     <label><b> :</b></label>
                                 </div>
                                 <div class="col-md-auto">
-                                        <input class="form-control" [(ngModel)]="user_roll" name="user_roll" matInput >
+                                        <input class="form-control" [(ngModel)]="user_roll" name="user_roll" matInput disabled >
                                 </div>
                             </div>
                             <div class="row rowpm">
@@ -85,27 +85,27 @@
                             </div>
                             <div class="row rowpm">
                                 <div class="col-md-2">
-                                    <label><b>Confirm Password</b></label>
+                                    <label><b>Current Password</b></label>
                                 </div>
                                 <div class="col-md-1">
                                     <label><b> :</b></label>
                                 </div>
                                 <div class="col-md-auto">
-                                    <input class="form-control" type="password" [(ngModel)]="user_confirm_password" name="user_confirm_password" matInput >
+                                    <input class="form-control" type="password" [(ngModel)]="user_confirm_password" name="user_confirm_password" matInput placeholder="Enter Old Password" >
                                 </div>
                             </div>
                             <div class="row rowpm">
                                 <div class="col-md-2">
-                                    <label><b>Password </b></label>
+                                    <label><b>New Password </b></label>
                                 </div>
                                 <div class="col-md-1">
                                     <label><b> :</b></label>
                                 </div>
                                 <div class="col-md-auto">
-                                    <input class="form-control" type="password" [(ngModel)]="user_new_password" name="user_new_password" matInput >
+                                    <input class="form-control" type="password" [(ngModel)]="user_new_password" name="user_new_password" matInput placeholder="Enter New Password" >
                                 </div>
                             </div>
-                            <button  mat-raised-button type="button" matTooltip="Save info" [matTooltipPosition]="'above'" class="btn btn-danger btn-md">
+                            <button (click)="saveEditedInfo()" class="btn btn-danger btn-md">
                                 Save Edited Info
                             </button>
                             <div class="clearfix"></div>
