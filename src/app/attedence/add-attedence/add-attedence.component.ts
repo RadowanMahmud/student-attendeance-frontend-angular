@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AttendenceForAdminService } from 'app/services/admin/attendence-for-admin.service';
-import * as moment from 'moment';
 
 @Component({
   selector: 'app-add-attedence',

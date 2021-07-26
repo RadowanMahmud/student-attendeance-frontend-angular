@@ -35,5 +35,15 @@ export class AttendenceForStudentService {
     return this.http.post<any>("http://localhost:52684/api/records",body,header)
   }
 
+  public saveStudentEditedInfo(body) {
+    var user = JSON.parse( localStorage.getItem('isLoggedIn'));
+   
+    var header = {
+        headers: new HttpHeaders()
+          .set('Authorization',  `Bearer ${user.token}`)
+    }
+    return this.http.put<any>(`http://localhost:52684/api/students/${user.data.id}`,body,header);
+  }
+
 
 }

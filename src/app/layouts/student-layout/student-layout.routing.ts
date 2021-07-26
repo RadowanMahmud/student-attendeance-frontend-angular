@@ -2,6 +2,9 @@ import { Routes } from '@angular/router';
 
 import { StudentDashboardComponent } from 'app/student-pages/student-dashboard/student-dashboard.component';
 import { StudentProfileComponent } from 'app/student-pages/student-profile/student-profile.component';
+import { DailyReportComponent } from 'app/student-pages/reports/daily-report/daily-report.component';
+import { MonthlyReportComponent } from 'app/student-pages/reports/monthly-report/monthly-report.component';
+import { StudentProfileEditComponent } from 'app/student-pages/student-profile-edit/student-profile-edit.component';
 // import { YourGuardGuard } from '../../your-guard.guard';
 
 export const StudentLayoutRoutes: Routes = [
@@ -53,4 +56,7 @@ export const StudentLayoutRoutes: Routes = [
     // { path: 'typography', component: TypographyComponent },
     { path: 'dashboard', component: StudentDashboardComponent},
     { path: 'profile',  component: StudentProfileComponent },
+    { path: 'reports-daily', component: DailyReportComponent},
+    { path: 'reports-monthly', component: MonthlyReportComponent},
+    { path: 'profile-edit', component: StudentProfileEditComponent},
 ];
