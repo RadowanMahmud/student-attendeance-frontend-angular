@@ -83,7 +83,7 @@
                                     <input class="form-control" type="password" [(ngModel)]="user_new_password" name="user_new_password" matInput placeholder="Enter New Password" >
                                 </div>
                             </div>
-                            <button class="btn btn-danger btn-md">
+                            <button (click)="saveEditedInfo()" class="btn btn-danger btn-md">
                                 Save Edited Info
                             </button>
                             <div class="clearfix"></div>

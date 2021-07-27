@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ProfileService } from 'app/services/admin/profile/profile.service';
 
 @Component({
   selector: 'app-user-profile-edit',
@@ -17,7 +18,7 @@ export class UserProfileEditComponent implements OnInit {
   user_id=0;
 
 
-  constructor(private router:Router) { }
+  constructor(public service:ProfileService,private router:Router) { }
 
   ngOnInit(): void {
     var user = JSON.parse(localStorage.getItem("isLoggedIn"));
@@ -52,21 +53,21 @@ export class UserProfileEditComponent implements OnInit {
       "Password": this.user_password,
       "Roles": "admin",
     }
-    // this.service.saveStudentEditedInfo(body).subscribe(
-    //   (response: any) => {
-    //       if (response) {
-    //          alert("Student Informations changed");
-    //          localStorage.removeItem('isLoggedIn');
-    //          this.router.navigateByUrl('login');
-    //       }
-    //       else {
-    //           console.log("not succeed");
-    //       }
-    //   },
-    //   error => {                             
-    //       alert('Please Try Again');
-    //   }
-    // );
+    this.service.saveAdminProfileEditedInfo(body).subscribe(
+      (response: any) => {
+          if (response) {
+             alert("Profile Informations changed");
+             localStorage.removeItem('isLoggedIn');
+             this.router.navigateByUrl('login');
+          }
+          else {
+              console.log("not succeed");
+          }
+      },
+      error => {                             
+          alert('Please Try Again');
+      }
+    );
   }
 
 }
