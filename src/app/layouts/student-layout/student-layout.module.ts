@@ -14,6 +14,9 @@ import {MatSelectModule} from '@angular/material/select';
 import { StudentDashboardComponent } from 'app/student-pages/student-dashboard/student-dashboard.component';
 import { StudentProfileComponent } from 'app/student-pages/student-profile/student-profile.component';
 import { DailyReportComponent } from 'app/student-pages/reports/daily-report/daily-report.component';
+import { MonthlyReportComponent } from 'app/student-pages/reports/monthly-report/monthly-report.component';
+import { WeeklyReportComponent } from 'app/student-pages/reports/weekly-report/weekly-report.component';
+import { StudentProfileEditComponent } from 'app/student-pages/student-profile-edit/student-profile-edit.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -30,7 +33,10 @@ import { DailyReportComponent } from 'app/student-pages/reports/daily-report/dai
   declarations: [
     StudentDashboardComponent,
     StudentProfileComponent,
-    DailyReportComponent
+    DailyReportComponent,
+    MonthlyReportComponent,
+    WeeklyReportComponent,
+    StudentProfileEditComponent
   ]
 })
 
