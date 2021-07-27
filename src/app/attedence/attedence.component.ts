@@ -11,6 +11,13 @@ import * as moment from 'moment';
 })
 export class AttedenceComponent implements OnInit {
 
+  selectedForDeleteid=0;
+  title: string='';
+  startTime: string='';
+  endTime: string='';
+  adminId=0;
+  editattid=0;
+
   responses: object=[]
   constructor(public service: AttendenceForAdminService, private router: Router) { }
 
@@ -26,6 +33,53 @@ export class AttedenceComponent implements OnInit {
   addAttendence(): void{
     this.router.navigateByUrl('add/attendence');
   }
+
+  onSelectEdit(att): void{
+    this.title = att.title;
+    this.startTime = att.startTime;
+    this.endTime = att.endTime;
+    this.adminId = att.adminId;
+    this.editattid = att.id
+  }
+
+  onEditConfirm(): void{
+    var body = {
+      "Title": this.title,
+      "AdminId": this.adminId,
+      "StartTime": this.startTime,
+      "EndTime": this.endTime,
+      "Id": this.editattid,
+    }
+    this.service.saveAttendenceEditInfo(this.editattid,body).subscribe(
+      (response: any) => {
+            this.getAttendence()         
+      },
+      error => {                             
+          alert('Please Reload');
+      }
+    );
+  }
+
+  onSelectDelete(id): void{
+    this.selectedForDeleteid = id
+  }
+  deleteAttendence(): void{
+    this.service.deleteAttendence(this.selectedForDeleteid).subscribe(
+      (response: any) => {
+          if (response) {
+            alert("Attendence Deleted");
+            this.getAttendence()
+          }
+          else {
+              console.log("not succeed");
+          }
+      },
+      error => {                             
+          alert('Please Reload');
+      }
+    );
+  }
+
   getAttendence(): void {
     this.service.fetchAttendence().subscribe(
       (response: any) => {
@@ -40,7 +94,7 @@ export class AttedenceComponent implements OnInit {
       error => {                             
           alert('Please Reload');
       }
-  );
+    );
   }
 
 }

@@ -1,18 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AttendenceForStudentService } from 'app/services/student/attendence-for-student.service';
+import { ProfileService } from 'app/services/admin/profile/profile.service';
 
 @Component({
-  selector: 'app-student-profile-edit',
-  templateUrl: './student-profile-edit.component.html',
-  styleUrls: ['./student-profile-edit.component.css']
+  selector: 'app-user-profile-edit',
+  templateUrl: './user-profile-edit.component.html',
+  styleUrls: ['./user-profile-edit.component.css']
 })
-export class StudentProfileEditComponent implements OnInit {
+export class UserProfileEditComponent implements OnInit {
 
   user_name: string='';
-  user_roll: string='';
-  user_phone: string='';
-  user_session: string='';
+  user_designation: string='';
   user_email: string='';
   user_password: string='';
   user_confirm_password: string='';
@@ -20,15 +18,13 @@ export class StudentProfileEditComponent implements OnInit {
   user_id=0;
 
 
-  constructor(public service: AttendenceForStudentService,private router:Router) { }
+  constructor(public service:ProfileService,private router:Router) { }
 
   ngOnInit(): void {
     var user = JSON.parse(localStorage.getItem("isLoggedIn"));
     this.user_name = user.data.name;
-    this.user_roll = user.data.roll;
-    this.user_phone = user.data.phone;
+    this.user_designation = user.data.designation;
     this.user_email = user.data.email;
-    this.user_session = user.data.session;
     this.user_password = user.data.password;
     this.user_id = user.data.id
   }
@@ -52,17 +48,15 @@ export class StudentProfileEditComponent implements OnInit {
     var body = {
       "Id": this.user_id,
       "Name": this.user_name,
-      "Roll": this.user_roll,
-      "Phone": this.user_phone,
-      "Session": this.user_session,
+      "Designation": this.user_designation,
       "Email": this.user_email,
       "Password": this.user_password,
-      "Roles": "student",
+      "Roles": "admin",
     }
-    this.service.saveStudentEditedInfo(body).subscribe(
+    this.service.saveAdminProfileEditedInfo(body).subscribe(
       (response: any) => {
           if (response) {
-             alert("Student Informations changed");
+             alert("Profile Informations changed");
              localStorage.removeItem('isLoggedIn');
              this.router.navigateByUrl('login');
           }

@@ -20,6 +20,17 @@ export class StudentforadminService {
     return this.http.get<any>("http://localhost:52684/api/students" , header)
   }
 
+  
+  public deleteStudent(id) {
+    var user = JSON.parse( localStorage.getItem('isLoggedIn'));
+   
+    var header = {
+        headers: new HttpHeaders()
+          .set('Authorization',  `Bearer ${user.token}`)
+    }
+    return this.http.delete<any>(`http://localhost:52684/api/students/${id}`,header);
+  }
+
   public addNewSTudent() {
 
     var user = JSON.parse( localStorage.getItem('isLoggedIn'));
