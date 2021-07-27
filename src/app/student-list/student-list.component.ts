@@ -9,6 +9,14 @@ import { StudentforadminService } from 'app/services/admin/studentforadmin.servi
 })
 export class StudentListComponent implements OnInit {
   responses: object=[]
+  selectedForDeleteId=0;
+  user_name: string='';
+  user_roll: string='';
+  user_phone: string='';
+  user_session: string='';
+  user_email: string='';
+  user_password: string='';
+  user_id=0;
 
   constructor(public service: StudentforadminService, private router: Router) { }
   ngOnInit(): void {
@@ -17,6 +25,32 @@ export class StudentListComponent implements OnInit {
 
   addStudent(): void {
     this.router.navigateByUrl('add/student');
+  }
+
+  onSelectDelete(id): void{
+    this.selectedForDeleteId =id
+  }
+
+  onSelectEdite(data): void{
+    this.user_name = data.name;
+    this.user_roll = data.roll;
+    this.user_phone = data.phone;
+    this.user_email = data.email;
+    this.user_session = data.session;
+    this.user_password = data.password;
+    this.user_id = data.id
+  }
+
+  onConfirmDelete(): void{
+    this.service.deleteStudent(this.selectedForDeleteId).subscribe(
+      (response: any) => {
+          alert('student deleted');
+          this.getStudent();
+      },
+      error => {                             
+          alert('Please Reload');
+      }
+    );
   }
 
   getStudent(): void {
@@ -32,7 +66,7 @@ export class StudentListComponent implements OnInit {
       error => {                             
           alert('Please Reload');
       }
-  );
+    );
   }
 
 }
