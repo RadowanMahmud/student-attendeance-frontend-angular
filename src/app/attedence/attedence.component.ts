@@ -67,6 +67,7 @@ export class AttedenceComponent implements OnInit {
     this.service.deleteAttendence(this.selectedForDeleteid).subscribe(
       (response: any) => {
           if (response) {
+            alert("Attendence Deleted");
             this.getAttendence()
           }
           else {
