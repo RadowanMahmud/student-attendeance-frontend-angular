@@ -11,6 +11,8 @@ import * as moment from 'moment';
 })
 export class AttedenceComponent implements OnInit {
 
+  selectedForDeleteid=0;
+
   responses: object=[]
   constructor(public service: AttendenceForAdminService, private router: Router) { }
 
@@ -26,6 +28,26 @@ export class AttedenceComponent implements OnInit {
   addAttendence(): void{
     this.router.navigateByUrl('add/attendence');
   }
+
+  onSelectDelete(id): void{
+    this.selectedForDeleteid = id
+  }
+  deleteAttendence(): void{
+    this.service.deleteAttendence(this.selectedForDeleteid).subscribe(
+      (response: any) => {
+          if (response) {
+            this.getAttendence()
+          }
+          else {
+              console.log("not succeed");
+          }
+      },
+      error => {                             
+          alert('Please Reload');
+      }
+    );
+  }
+
   getAttendence(): void {
     this.service.fetchAttendence().subscribe(
       (response: any) => {
@@ -40,7 +62,7 @@ export class AttedenceComponent implements OnInit {
       error => {                             
           alert('Please Reload');
       }
-  );
+    );
   }
 
 }
