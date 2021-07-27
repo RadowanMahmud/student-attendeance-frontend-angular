@@ -4,82 +4,55 @@
           <div class="col-md-12">
               <div class="card">
                   <div class="card-header card-header-danger">
-                      <h4 class="card-title">Edit Profile</h4>
-                      <p class="card-category">Complete your profile</p>
+                      <div class="row">
+                          <div class="col-10">
+                              <h4 class="card-title">User Profile</h4>
+                              <p class="card-category">{{ user_name}}'s profile</p>
+                          </div>
+                          <div class="col-auto">
+                              <button (click)="navigate('user-profile-edit')" mat-raised-button type="button" matTooltip="Edit your info" [matTooltipPosition]="'above'" class="btn btn-success btn-md">
+                                  Edit Info
+                              </button>
+                          </div>
+                      </div>
                   </div>
                   <div class="card-body">
-                      <form>
-                          <div class="row">
-                              <div class="col-md-5">
-                                <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Company (disabled)" disabled>
-                                  </mat-form-field>
-                              </div>
-                              <div class="col-md-3">
-                                  <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Username">
-                                  </mat-form-field>
-                              </div>
+                      <div>
+                          <div class="row rowpm">
                               <div class="col-md-4">
-                                  <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Email address" type="email">
-                                  </mat-form-field>
+                                      <label><b>User Name</b></label>
+                              </div>
+                              <div class="col-md-1">
+                                  <label><b> :</b></label>
+                              </div>
+                              <div class="col-md-auto">
+                                      <input [(ngModel)]="user_name" class="form-control" name="user_name" matInput disabled>
                               </div>
                           </div>
-                          <div class="row">
-                              <div class="col-md-6">
-                                <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Fist Name" type="text">
-                                </mat-form-field>
-                              </div>
-                              <div class="col-md-6">
-                                <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Last Name" type="text">
-                                </mat-form-field>
-                              </div>
-                          </div>
-                          <div class="row">
-                              <div class="col-md-12">
-                                <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Adress" type="text">
-                                </mat-form-field>
-                              </div>
-                          </div>
-                          <div class="row">
+                          <div class="row rowpm">
                               <div class="col-md-4">
-                                <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="City" type="text">
-                                </mat-form-field>
+                                  <label><b>User Designation</b></label>
                               </div>
-                              <div class="col-md-4">
-                                <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Country" type="text">
-                                </mat-form-field>
+                              <div class="col-md-1">
+                                  <label><b> :</b></label>
                               </div>
-                              <div class="col-md-4">
-                                <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Postal Code" type="text">
-                                </mat-form-field>
+                              <div class="col-md-auto">
+                                      <input class="form-control" [(ngModel)]="user_designation" name="user_designation" matInput disabled>
                               </div>
                           </div>
-                          <div class="row">
-                              <div class="col-md-12">
-                                <label>About Me</label>
-                                <mat-form-field class="example-full-width">
-                                   <textarea matInput placeholder="Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo."></textarea>
-                                 </mat-form-field>
-                                  <!-- <div class="form-group">
-
-                                      <div class="form-group">
-                                          <label class="bmd-label-floating"> Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</label>
-                                          <textarea class="form-control" rows="5"></textarea>
-                                      </div>
-                                  </div> -->
+                          <div class="row rowpm">
+                              <div class="col-md-4">
+                                  <label><b>User Email</b></label>
+                              </div>
+                              <div class="col-md-1">
+                                  <label><b> :</b></label>
+                              </div>
+                              <div class="col-md-auto">
+                                      <input class="form-control" [(ngModel)]="user_email" name="user_email" matInput disabled>
                               </div>
                           </div>
-                          <button mat-raised-button type="submit" class="btn btn-danger pull-right">Update Profile</button>
                           <div class="clearfix"></div>
-                      </form>
+                      </div>
                   </div>
               </div>
           </div>

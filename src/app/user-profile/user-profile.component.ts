@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'app/services/auth.service';
 
 @Component({
@@ -7,20 +8,21 @@ import { AuthService } from 'app/services/auth.service';
   styleUrls: ['./user-profile.component.css']
 })
 export class UserProfileComponent implements OnInit {
+  user_name: string='';
+  user_designation: string='';
+  user_email: string='';
 
-  constructor(public service: AuthService) { }
+  constructor(public service: AuthService, private router: Router) { }
 
   ngOnInit() {
-    this.service.testing().subscribe(
-      (response: any) => {
-          if (response) {
-              console.log(response)
-          }
-          else {
-              console.log("not succeed");
-          }
-      }
-  );
+    var user = JSON.parse(localStorage.getItem("isLoggedIn"));
+    this.user_name = user.data.name;
+    this.user_designation = user.data.designation;
+    this.user_email = user.data.email;
+  }
+
+  navigate(path): void{
+    this.router.navigateByUrl(path);
   }
 
 }

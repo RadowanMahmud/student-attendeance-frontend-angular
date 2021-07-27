@@ -12,14 +12,10 @@ import { AppComponent } from './app.component';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
-import { TableListComponent } from './table-list/table-list.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { LoginLayoutComponent } from './login-layout/login-layout.component';
 import { StudentLayoutComponent } from './layouts/student-layout/student-layout.component';
-import { MonthlyReportComponent } from './student-pages/reports/monthly-report/monthly-report.component';
-import { StudentProfileEditComponent } from './student-pages/student-profile-edit/student-profile-edit.component';
-import { WeeklyReportComponent } from './student-pages/reports/weekly-report/weekly-report.component';
 
 
 @NgModule({
@@ -37,9 +33,6 @@ import { WeeklyReportComponent } from './student-pages/reports/weekly-report/wee
       AdminLayoutComponent,
       LoginLayoutComponent,
       StudentLayoutComponent,
-      MonthlyReportComponent,
-      StudentProfileEditComponent,
-      WeeklyReportComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

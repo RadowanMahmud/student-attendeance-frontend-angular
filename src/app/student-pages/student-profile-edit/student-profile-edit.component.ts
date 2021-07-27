@@ -41,7 +41,7 @@ export class StudentProfileEditComponent implements OnInit {
         return;
       }
       else{
-        if(this.user_new_password.length > 6){
+        if(this.user_new_password.length >= 6){
             this.user_password = this.user_new_password;
         }else{
           alert("Password must contain at least 6 characters");
