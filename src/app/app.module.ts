@@ -19,6 +19,7 @@ import { LoginLayoutComponent } from './login-layout/login-layout.component';
 import { StudentLayoutComponent } from './layouts/student-layout/student-layout.component';
 import { MonthlyReportComponent } from './student-pages/reports/monthly-report/monthly-report.component';
 import { StudentProfileEditComponent } from './student-pages/student-profile-edit/student-profile-edit.component';
+import { WeeklyReportComponent } from './student-pages/reports/weekly-report/weekly-report.component';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { StudentProfileEditComponent } from './student-pages/student-profile-edi
       StudentLayoutComponent,
       MonthlyReportComponent,
       StudentProfileEditComponent,
+      WeeklyReportComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
