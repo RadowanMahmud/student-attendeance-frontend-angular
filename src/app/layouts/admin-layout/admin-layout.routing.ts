@@ -8,6 +8,9 @@ import { StudentAddComponent } from 'app/student-list/student-add/student-add.co
 import { AttedenceComponent } from 'app/attedence/attedence.component';
 import { AddAttedenceComponent } from 'app/attedence/add-attedence/add-attedence.component';
 import { UserProfileEditComponent } from 'app/user-profile/user-profile-edit/user-profile-edit.component';
+import { AdminDailyReportComponent } from 'app/services/admin/profile/Admin-Reports/admin-daily-report/admin-daily-report.component';
+import { AdminWeeklyReportComponent } from 'app/services/admin/profile/Admin-Reports/admin-weekly-report/admin-weekly-report.component';
+import { AdminMonthlyReportComponent } from 'app/services/admin/profile/Admin-Reports/admin-monthly-report/admin-monthly-report.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -59,5 +62,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'add/student', component: StudentAddComponent},
     { path: 'attendence', component: AttedenceComponent},
     { path: 'add/attendence', component: AddAttedenceComponent},
-
+    { path: 'admin/daily-report', component: AdminDailyReportComponent},
+    { path: 'admin/weekly-report', component: AdminWeeklyReportComponent},
+    { path: 'admin/monthly-report', component: AdminMonthlyReportComponent}
 ];

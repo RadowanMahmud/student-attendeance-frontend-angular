@@ -53,6 +53,28 @@ export class StudentListComponent implements OnInit {
     );
   }
 
+  onConfirmEdit(): void{
+    var body = {
+      "Id": this.user_id,
+      "Name": this.user_name,
+      "Roll": this.user_roll,
+      "Phone": this.user_phone,
+      "Session": this.user_session,
+      "Email": this.user_email,
+      "Password": this.user_password,
+      "Roles": "student",
+    }
+    this.service.saveStudentEditedInfo(this.user_id,body).subscribe(
+      (response: any) => {
+          alert('Student Information Edited');
+          this.getStudent();
+      },
+      error => {                             
+          alert('Please Reload');
+      }
+    );
+  }
+
   getStudent(): void {
     this.service.fetchStudent().subscribe(
       (response: any) => {

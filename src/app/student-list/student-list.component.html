@@ -21,9 +21,6 @@
                             <table class="table">
                                 <thead class=" text-primary">
                                     <th>
-                                        ID
-                                    </th>
-                                    <th>
                                         Name
                                     </th>
                                     <th>
@@ -44,9 +41,6 @@
                                 </thead>
                                 <tbody>
                                     <tr *ngFor="let response of responses">
-                                        <td>
-                                            {{ response.id }}
-                                        </td>
                                         <td>
                                             {{ response.name }}
                                         </td>
@@ -165,7 +159,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                    <button type="button" class="btn btn-danger" class="btn btn-primary" data-dismiss="modal">Yes</button>
+                    <button (click)="onConfirmEdit()" type="button" class="btn btn-danger" class="btn btn-primary" data-dismiss="modal">Yes</button>
                   </div>
             </div>
         </div>

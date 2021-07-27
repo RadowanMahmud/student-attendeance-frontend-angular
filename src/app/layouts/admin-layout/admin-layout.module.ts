@@ -10,6 +10,9 @@ import { StudentAddComponent } from 'app/student-list/student-add/student-add.co
 import { AttedenceComponent } from 'app/attedence/attedence.component';
 import { AddAttedenceComponent } from 'app/attedence/add-attedence/add-attedence.component';
 import { UserProfileEditComponent } from 'app/user-profile/user-profile-edit/user-profile-edit.component';
+import { AdminDailyReportComponent } from 'app/services/admin/profile/Admin-Reports/admin-daily-report/admin-daily-report.component';
+import { AdminWeeklyReportComponent } from 'app/services/admin/profile/Admin-Reports/admin-weekly-report/admin-weekly-report.component';
+import { AdminMonthlyReportComponent } from 'app/services/admin/profile/Admin-Reports/admin-monthly-report/admin-monthly-report.component';
 
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
@@ -38,7 +41,10 @@ import {MatSelectModule} from '@angular/material/select';
     StudentAddComponent,
     AttedenceComponent,
     AddAttedenceComponent,
-    UserProfileEditComponent
+    UserProfileEditComponent,
+    AdminDailyReportComponent,
+    AdminWeeklyReportComponent,
+    AdminMonthlyReportComponent
   ]
 })
 
