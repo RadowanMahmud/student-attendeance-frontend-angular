@@ -17,7 +17,7 @@ export class StudentforadminService {
           .set('Authorization',  `Bearer ${user.token}`)
     }
       
-    return this.http.get<any>("http://localhost:52684/api/students" , header)
+    return this.http.get<any>("http://localhost:5000/api/students" , header)
   }
 
   
@@ -28,7 +28,7 @@ export class StudentforadminService {
         headers: new HttpHeaders()
           .set('Authorization',  `Bearer ${user.token}`)
     }
-    return this.http.delete<any>(`http://localhost:52684/api/students/${id}`,header);
+    return this.http.delete<any>(`http://localhost:5000/api/students/${id}`,header);
   }
 
   public saveStudentEditedInfo(id,body) {
@@ -38,7 +38,7 @@ export class StudentforadminService {
         headers: new HttpHeaders()
           .set('Authorization',  `Bearer ${user.token}`)
     }
-    return this.http.put<any>(`http://localhost:52684/api/students/${id}`,body,header);
+    return this.http.put<any>(`http://localhost:5000/api/students/${id}`,body,header);
   }
 
   public addNewSTudent() {
@@ -59,7 +59,7 @@ export class StudentforadminService {
       "Roles": "student",
     }
 
-     return this.http.post<any>("http://localhost:52684/api/students" , body, header);
+     return this.http.post<any>("http://localhost:5000/api/students" , body, header);
   }
   studentAddForm = this.formbuilder.group({
     Name: ['', Validators.required],

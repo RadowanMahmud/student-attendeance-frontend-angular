@@ -17,7 +17,7 @@ export class AdminManageService {
           .set('Authorization',  `Bearer ${user.token}`)
     }
       
-    return this.http.get<any>("http://localhost:52684/api/admins" , header)
+    return this.http.get<any>("http://localhost:5000/api/admins" , header)
   }
 
   public addAdmin(body) {
@@ -28,6 +28,6 @@ export class AdminManageService {
           .set('Authorization',  `Bearer ${user.token}`)
     }
       
-    return this.http.post<any>("http://localhost:52684/api/admins/register" ,body , header)
+    return this.http.post<any>("http://localhost:5000/api/admins/register" ,body , header)
   }
 }

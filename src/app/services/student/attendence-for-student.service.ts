@@ -16,7 +16,7 @@ export class AttendenceForStudentService {
           .set('Authorization',  `Bearer ${user.token}`)
     }
       
-    return this.http.get<any>(`http://localhost:52684/api/attendances/current/${user.data.id}` , header)
+    return this.http.get<any>(`http://localhost:5000/api/attendances/current/${user.data.id}` , header)
   }
 
   public saveAttendenceRecord(attendancesId) {
@@ -32,7 +32,7 @@ export class AttendenceForStudentService {
       "GivenTime": new Date(),
       "StudentId": user.data.id,
     }
-    return this.http.post<any>("http://localhost:52684/api/records",body,header)
+    return this.http.post<any>("http://localhost:5000/api/records",body,header)
   }
 
   public saveStudentEditedInfo(body) {
@@ -42,7 +42,7 @@ export class AttendenceForStudentService {
         headers: new HttpHeaders()
           .set('Authorization',  `Bearer ${user.token}`)
     }
-    return this.http.put<any>(`http://localhost:52684/api/students/${user.data.id}`,body,header);
+    return this.http.put<any>(`http://localhost:5000/api/students/${user.data.id}`,body,header);
   }
 
 

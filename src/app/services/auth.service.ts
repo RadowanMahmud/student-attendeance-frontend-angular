@@ -11,7 +11,7 @@ export class AuthService {
 
     constructor(private formbuilder: FormBuilder, private http: HttpClient) { } 
 
-    public authUrl = "http://localhost:52684/api/login/authenticate";
+    public authUrl = "http://localhost:5000/api/login/authenticate";
 
     public adminSignInOperation() {
         var body = {
@@ -31,7 +31,7 @@ export class AuthService {
               .set('Authorization',  `Bearer ${user.token}`)
           }
           
-        return this.http.get<any>("http://localhost:52684/api/admins" , header)
+        return this.http.get<any>("http://localhost:5000/api/admins" , header)
     }
 
     adminSignInformModel = this.formbuilder.group({
