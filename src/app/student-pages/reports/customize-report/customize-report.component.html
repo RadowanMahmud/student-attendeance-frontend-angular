@@ -1,0 +1,80 @@
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                <label style="padding: 10px;">Start Date:</label>
+                <input type="date" id="bdaymonth" [(ngModel)]="startDate" #ctrl="ngModel" required>
+            </div>
+            <div class="col-md-3">
+                <label style="padding: 10px;">End Date:</label>
+                <input type="date" id="bdaymonth" [(ngModel)]="endDate" #ctrl="ngModel" required>
+            </div>
+            <button (click)="getReport()" class="btn btn-sm">
+                Submit
+            </button>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-success">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <h4 class="card-title ">Customized Attendence Report</h4>
+                                <p class="card-category">List Of Attendences From {{startDate}} to {{endDate}}</p>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="month" id="bdaymonth" [(ngModel)]="selectedMonth" #ctrl="ngModel" required>
+                                <button (click)="getMonthlyReport()">
+                                    Submit
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th>
+                                        Title
+                                    </th>
+                                    <th>
+                                        Author
+                                    </th>
+                                    <th>
+                                        Given Time
+                                    </th>
+                                    <th>
+                                        Start Time
+                                    </th>
+                                    <th>
+                                        End Time
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let response of responses">
+                                        <td>
+                                            {{ response.attendence.title }}
+                                        </td>
+                                        <td>
+                                            {{ response.admin.name }}
+                                        </td>
+                                        <td>
+                                            {{ response.record.givenTime | date :'medium' }}
+                                        </td>
+                                        <td>
+                                            {{ response.attendence.startTime | date :'medium' }}
+                                        </td>
+                                        <td>
+                                            {{ response.attendence.endTime | date :'medium' }}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
