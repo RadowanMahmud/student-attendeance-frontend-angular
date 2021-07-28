@@ -17,6 +17,7 @@ import { DailyReportComponent } from 'app/student-pages/reports/daily-report/dai
 import { MonthlyReportComponent } from 'app/student-pages/reports/monthly-report/monthly-report.component';
 import { WeeklyReportComponent } from 'app/student-pages/reports/weekly-report/weekly-report.component';
 import { StudentProfileEditComponent } from 'app/student-pages/student-profile-edit/student-profile-edit.component';
+import { CustomizeReportComponent } from 'app/student-pages/reports/customize-report/customize-report.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -36,7 +37,8 @@ import { StudentProfileEditComponent } from 'app/student-pages/student-profile-e
     DailyReportComponent,
     MonthlyReportComponent,
     WeeklyReportComponent,
-    StudentProfileEditComponent
+    StudentProfileEditComponent,
+    CustomizeReportComponent
   ]
 })
 
