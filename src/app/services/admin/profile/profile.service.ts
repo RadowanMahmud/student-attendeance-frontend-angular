@@ -41,6 +41,17 @@ export class ProfileService {
     return this.http.get<any>(`http://localhost:52684/api/records/admin/reports/weekly/${user.data.id}` , header)
   }
 
+  public fetchCustomizeAttendenceReport(startdate,enddate) {
+    var user = JSON.parse( localStorage.getItem('isLoggedIn'));
+   
+    var header = {
+        headers: new HttpHeaders()
+          .set('Authorization',  `Bearer ${user.token}`)
+    }
+      
+    return this.http.get<any>(`http://localhost:52684/api/records/admin/reports/customized/${startdate}/${enddate}/${user.data.id}` , header)
+  }
+
   
   public fetchMonthlyAttendenceReport(date: string) {
     var user = JSON.parse( localStorage.getItem('isLoggedIn'));

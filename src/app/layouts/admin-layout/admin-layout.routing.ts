@@ -11,6 +11,8 @@ import { UserProfileEditComponent } from 'app/user-profile/user-profile-edit/use
 import { AdminDailyReportComponent } from 'app/services/admin/profile/Admin-Reports/admin-daily-report/admin-daily-report.component';
 import { AdminWeeklyReportComponent } from 'app/services/admin/profile/Admin-Reports/admin-weekly-report/admin-weekly-report.component';
 import { AdminMonthlyReportComponent } from 'app/services/admin/profile/Admin-Reports/admin-monthly-report/admin-monthly-report.component';
+import { AdminListComponent } from 'app/admin-list/admin-list.component';
+import { AdminCustomizeReportComponent } from 'app/services/admin/profile/Admin-Reports/admin-customize-report/admin-customize-report.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -64,5 +66,7 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'add/attendence', component: AddAttedenceComponent},
     { path: 'admin/daily-report', component: AdminDailyReportComponent},
     { path: 'admin/weekly-report', component: AdminWeeklyReportComponent},
-    { path: 'admin/monthly-report', component: AdminMonthlyReportComponent}
+    { path: 'admin/monthly-report', component: AdminMonthlyReportComponent},
+    { path: 'admin-list', component: AdminListComponent},
+    { path: 'admin/customized-report', component:AdminCustomizeReportComponent}
 ];
