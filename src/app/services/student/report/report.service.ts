@@ -16,7 +16,7 @@ export class ReportService {
           .set('Authorization',  `Bearer ${user.token}`)
     }
       
-    return this.http.get<any>(`http://localhost:52684/api/records/reports/daily/${user.data.id}` , header)
+    return this.http.get<any>(`http://localhost:5000/api/records/reports/daily/${user.data.id}` , header)
   }
 
   public fetchMonthlyAttendenceReport(date: string) {
@@ -27,7 +27,7 @@ export class ReportService {
           .set('Authorization',  `Bearer ${user.token}`)
     }
       
-    return this.http.get<any>(`http://localhost:52684/api/records/reports/monthly/${date}/${user.data.id}` , header)
+    return this.http.get<any>(`http://localhost:5000/api/records/reports/monthly/${date}/${user.data.id}` , header)
   }
 
   public fetchCustomizedReport(startDate: string,endDate: string) {
@@ -38,7 +38,7 @@ export class ReportService {
           .set('Authorization',  `Bearer ${user.token}`)
     }
       
-    return this.http.get<any>(`http://localhost:52684/api/records/reports/customized/${startDate}/${endDate}/${user.data.id}` , header)
+    return this.http.get<any>(`http://localhost:5000/api/records/reports/customized/${startDate}/${endDate}/${user.data.id}` , header)
   }
 
   public fetchWeeklyAttendenceReport() {
@@ -49,6 +49,6 @@ export class ReportService {
           .set('Authorization',  `Bearer ${user.token}`)
     }
       
-    return this.http.get<any>(`http://localhost:52684/api/records/reports/weekly/${user.data.id}` , header)
+    return this.http.get<any>(`http://localhost:5000/api/records/reports/weekly/${user.data.id}` , header)
   }
 }

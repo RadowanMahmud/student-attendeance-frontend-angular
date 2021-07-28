@@ -17,7 +17,7 @@ export class AttendenceForAdminService {
           .set('Authorization',  `Bearer ${user.token}`)
     }
       
-    return this.http.get<any>("http://localhost:52684/api/attendances" , header)
+    return this.http.get<any>("http://localhost:5000/api/attendances" , header)
   }
 
   public addNewAttendence() {
@@ -34,7 +34,7 @@ export class AttendenceForAdminService {
       "StartTime": this.attendenceAddForm.value.StartTime,
       "EndTime": this.attendenceAddForm.value.EndTime,
     }
-     return this.http.post<any>("http://localhost:52684/api/attendances" , body, header);
+     return this.http.post<any>("http://localhost:5000/api/attendances" , body, header);
   }
   public saveAttendenceEditInfo(id,body) {
     var user = JSON.parse( localStorage.getItem('isLoggedIn'));
@@ -43,7 +43,7 @@ export class AttendenceForAdminService {
         headers: new HttpHeaders()
           .set('Authorization',  `Bearer ${user.token}`)
     }
-    return this.http.put<any>(`http://localhost:52684/api/attendances/${id}`,body,header);
+    return this.http.put<any>(`http://localhost:5000/api/attendances/${id}`,body,header);
   }
 
   public deleteAttendence(id) {
@@ -53,7 +53,7 @@ export class AttendenceForAdminService {
         headers: new HttpHeaders()
           .set('Authorization',  `Bearer ${user.token}`)
     }
-    return this.http.delete<any>(`http://localhost:52684/api/attendances/${id}`,header);
+    return this.http.delete<any>(`http://localhost:5000/api/attendances/${id}`,header);
   }
 
   
