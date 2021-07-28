@@ -1,1 +1,73 @@
-<p>admin-monthly-report works!</p>
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <h4 class="card-title ">Monthly Attendence Report</h4>
+                                <p class="card-category">List Of Attendences For This Month</p>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="month" id="bdaymonth" [(ngModel)]="selectedMonth" #ctrl="ngModel" required>
+                                <button (click)="getMonthlyReport()">
+                                    Submit
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    <th>
+                                        Title
+                                    </th>
+                                    <th>
+                                        Student Name
+                                    </th>
+                                    <th>
+                                        STudent Roll
+                                    </th>
+                                    <th>
+                                        Given Time
+                                    </th>
+                                    <th>
+                                        Start Time
+                                    </th>
+                                    <th>
+                                        End Time
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let response of responses">
+                                        <td>
+                                            {{ response.attendence.title }}
+                                        </td>
+                                        <td>
+                                            {{ response.student.name }}
+                                        </td>
+                                        <td>
+                                            {{ response.student.roll }}
+                                        </td>
+                                        <td>
+                                            {{ response.record.givenTime | date :'medium' }}
+                                        </td>
+                                        <td>
+                                            {{ response.attendence.startTime | date :'medium' }}
+                                        </td>
+                                        <td>
+                                            {{ response.attendence.endTime | date :'medium' }}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>

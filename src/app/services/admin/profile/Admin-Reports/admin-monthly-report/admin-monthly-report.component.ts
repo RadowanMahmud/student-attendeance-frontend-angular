@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProfileService } from '../../profile.service';
 
 @Component({
   selector: 'app-admin-monthly-report',
@@ -6,10 +7,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-monthly-report.component.css']
 })
 export class AdminMonthlyReportComponent implements OnInit {
+  selectedMonth: string='';
+  responses: object= [];
 
-  constructor() { }
+  constructor(public service: ProfileService) { }
 
   ngOnInit(): void {
+    var user = JSON.parse(localStorage.getItem("isLoggedIn"));
+  }
+
+  getMonthlyReport(): void{
+    this.service.fetchMonthlyAttendenceReport(this.selectedMonth).subscribe(
+      (response: any) => {
+          if (response) {
+            this.responses = response;
+            // console.log(this.responses);
+          }
+          else {
+              console.log("not succeed");
+          }
+      },
+      error => {                             
+          alert('Please Reload');
+      }
+    );
   }
 
 }

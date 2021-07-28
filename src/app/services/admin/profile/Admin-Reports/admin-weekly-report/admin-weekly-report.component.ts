@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProfileService } from '../../profile.service';
 
 @Component({
   selector: 'app-admin-weekly-report',
@@ -7,9 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminWeeklyReportComponent implements OnInit {
 
-  constructor() { }
+  responses: object=[];
+  constructor(public service: ProfileService) { }
 
   ngOnInit(): void {
+    this.getWeeklyReport();
   }
 
+  getWeeklyReport(): void{
+    this.service.fetchWeeklyAttendenceReport().subscribe(
+      (response: any) => {
+          if (response) {
+            this.responses = response;
+            console.log('Howdy');
+          }
+          else {
+              console.log("not succeed");
+          }
+      },
+      error => {                             
+          alert('Please Reload');
+      }
+    );
+  }
 }
